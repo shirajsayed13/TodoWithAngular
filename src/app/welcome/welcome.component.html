@@ -1,6 +1,19 @@
-<div>
-    <p>welcome works! {{name}}</p>
+<h1>welcome!!!</h1>
+<div class="container">
+    <p>Welcome {{name}}. You can Manage your todos <a routerLink="/todos">here</a></p>
 </div>
-<div>
-    You can Manage your todos <a routerLink = "/todos">here</a>
+
+<div class="container">
+    Click here to get Customized welcome message
+    <button (click) = "getWelcomeMessageWithPathVariable()" class="btn btn-success"> Get Welcome Message</button>
+</div>
+
+<div class="container" *ngIf= "welcomeMessageFromService">
+    <h5>See the service request here</h5>
+    <h1>{{welcomeMessageFromService}}</h1>
+</div>
+
+<div class="container" *ngIf= "errorMessageFromService">
+    <h5>Error Message</h5>
+    <h1>{{errorMessageFromService}}</h1>
 </div>
